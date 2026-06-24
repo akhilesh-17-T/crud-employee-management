@@ -1,0 +1,40 @@
+package com.example.crud.entity;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class EmployeeEntityTest {
+
+    @Test
+    void testEmployeeConstructor() {
+
+        Employee employee = new Employee(
+                1L,
+                "Akhilesh",
+                "akhilesh@gmail.com",
+                50000.0
+        );
+
+        assertEquals(1L, employee.getId());
+        assertEquals("Akhilesh", employee.getName());
+        assertEquals("akhilesh@gmail.com", employee.getEmail());
+        assertEquals(50000.0, employee.getSalary());
+    }
+
+    @Test
+    void testEmployeeSettersAndGetters() {
+
+        Employee employee = new Employee();
+
+        employee.setId(1L);
+        employee.setName("John");
+        employee.setEmail("john@gmail.com");
+        employee.setSalary(45000.0);
+
+        assertEquals(1L, employee.getId());
+        assertEquals("John", employee.getName());
+        assertEquals("john@gmail.com", employee.getEmail());
+        assertEquals(45000.0, employee.getSalary());
+    }
+}
